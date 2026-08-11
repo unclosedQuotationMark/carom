@@ -1,0 +1,29 @@
+BasedOnStyle: Microsoft
+
+# includes
+SortIncludes: true
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex:           '^".*"'
+    Priority:        1
+  - Regex:           '^<.*>'
+    Priority:        2
+
+# {}
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterNamespace: false
+
+# *&
+PointerAlignment: Left
+
+# public/private
+AccessModifierOffset: -4
+
+# :
+BreakConstructorInitializers: BeforeComma
+PackConstructorInitializers: Never
+
+# function call
+BinPackArguments: true
+AlignAfterOpenBracket: BlockIndent
