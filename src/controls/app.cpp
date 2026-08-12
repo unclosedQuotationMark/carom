@@ -2,6 +2,7 @@
 
 #include "graphics/constants.hpp"
 
+#include <SFML/System/Clock.hpp>
 #include <SFML/Window/Event.hpp>
 
 namespace carom::controls {
@@ -18,10 +19,11 @@ App::App()
 
 void App::run()
 {
+    sf::Clock clock;
     while (window_.isOpen())
     {
         processEvents();
-        update();
+        update(clock.restart().asSeconds());
         render();
     }
 }
@@ -39,8 +41,9 @@ void App::processEvents()
     }
 }
 
-void App::update()
+void App::update(float dt)
 {
+    engine_.update(dt);
 }
 
 void App::render()

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.25)
 
-project(carom VERSION 0.1.0 LANGUAGES CXX)
+project(carom VERSION 0.1.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -13,6 +13,7 @@ add_executable(carom
     src/controls/app.cpp
     src/graphics/simulation_view.cpp
     src/controls/camera_controller.cpp
+    src/physics/engine.cpp
 )
 
 target_include_directories(carom PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)

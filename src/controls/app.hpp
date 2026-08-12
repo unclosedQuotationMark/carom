@@ -2,6 +2,7 @@
 
 #include "controls/camera_controller.hpp"
 #include "graphics/simulation_view.hpp"
+#include "physics/engine.hpp"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
@@ -17,9 +18,10 @@ private:
     sf::RenderWindow window_;
     graphics::SimulationView simulationView_;
     CameraController cameraController_;
+    physics::Engine engine_;
 
     void processEvents();
-    void update();
+    void update(float dt);
     void render();
 };
 
