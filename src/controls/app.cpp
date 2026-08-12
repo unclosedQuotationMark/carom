@@ -15,6 +15,8 @@ App::App()
     , cameraController_(simulationView_.getCamera())
 {
     window_.setFramerateLimit(graphics::windowFPS);
+
+    engine_.addParticle(1.0, 50.0, {}, {30, 30});
 }
 
 void App::run()
@@ -49,7 +51,7 @@ void App::update(float dt)
 void App::render()
 {
     window_.clear();
-    simulationView_.render(window_);
+    simulationView_.render(window_, engine_.getParticles());
     window_.display();
 }
 
