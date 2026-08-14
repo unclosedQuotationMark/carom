@@ -27,3 +27,6 @@ PackConstructorInitializers: Never
 # function call
 BinPackArguments: true
 AlignAfterOpenBracket: BlockIndent
+
+# templates
+AlwaysBreakTemplateDeclarations: Yes

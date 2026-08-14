@@ -16,7 +16,7 @@ App::App()
 {
     window_.setFramerateLimit(graphics::windowFPS);
 
-    engine_.addParticle(1.0, 50.0, {}, {30, 30});
+    engine_.spawnParticles(1000, 5, 5, {0, 0}, {300, 300}, 0, 700);
 }
 
 void App::run()
