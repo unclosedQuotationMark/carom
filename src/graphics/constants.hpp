@@ -11,5 +11,6 @@ inline constexpr unsigned int windowFPS{60};
 
 inline constexpr sf::Color backGroundColor{sf::Color::Black};
 inline constexpr sf::Color particleColor{sf::Color::Blue};
+inline constexpr sf::Color staticBodyColor{sf::Color::Red};
 
 } // namespace carom::graphics

@@ -7,12 +7,7 @@ namespace carom::physics {
 
 void Engine::update(real dt)
 {
-    // move
-    for (auto& particle : particles_)
-    {
-        particle.position += particle.velocity * dt;
-    }
-
+    updatePositions(dt);
     detectCollisions();
     resolveCollisions();
 }
@@ -43,9 +38,28 @@ void Engine::spawnParticles(
     }
 }
 
+void Engine::spawnStaticBody(Vector2D size, Vector2D position, real angle)
+{
+    bool isOriented = math::isZero(angle);
+    staticBodies_.emplace_back(size, position, isOriented, angle);
+}
+
 const std::vector<Particle>& Engine::getParticles() const
 {
     return particles_;
+}
+
+const std::vector<StaticBody>& Engine::getStaticBodies() const
+{
+    return staticBodies_;
+}
+
+void Engine::updatePositions(real dt)
+{
+    for (auto& particle : particles_)
+    {
+        particle.position += particle.velocity * dt;
+    }
 }
 
 void Engine::detectCollisions()

@@ -29,8 +29,7 @@ public:
 
     real getAngle()
     {
-        std::uniform_real_distribution<real> dist(0, 2 * std::numbers::pi);
-        return dist(gen);
+        return getReal(0, 2 * std::numbers::pi);
     }
 
     template <typename T>

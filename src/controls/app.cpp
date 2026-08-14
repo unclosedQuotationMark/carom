@@ -17,6 +17,8 @@ App::App()
     window_.setFramerateLimit(graphics::windowFPS);
 
     engine_.spawnParticles(1000, 5, 5, {0, 0}, {300, 300}, 0, 700);
+    engine_.spawnStaticBody({50, 50}, {0, 0});
+    engine_.spawnStaticBody({100, 50}, {400, 300}, 0.1);
 }
 
 void App::run()
@@ -51,7 +53,7 @@ void App::update(float dt)
 void App::render()
 {
     window_.clear();
-    simulationView_.render(window_, engine_.getParticles());
+    simulationView_.render(window_, engine_);
     window_.display();
 }
 
